@@ -47,8 +47,37 @@ left_panel = tk.CTkFrame(master=root, fg_color=left_panel_color, width=300, corn
 left_panel.pack(side="right", padx=10, pady=10, fill="y")
 
 # add content to left panel
-# exit button
-exit_button = tk.CTkButton(master=left_panel, text="Exit", )
+# left panel title
+steps = tk.CTkLabel(master=left_panel, text="Steps", text_color=right_panel_color, font=("sanserif", 42, "bold"),
+                    bg_color="transparent", fg_color="transparent", height=40, width=300, corner_radius=20)
+steps.pack(padx=0, pady=30, side="top")
+
+# cleaning1 button
+cleaning1 = tk.CTkButton(master=left_panel, text="Cleaning 1", text_color="white", font=("sanserif", 16, "bold"),
+                         border_width=0, bg_color="transparent", fg_color="transparent", hover_color="#6666ff",
+                         height=40, width=300, corner_radius=10)
+cleaning1.place(y=100, x=0)
+
+# cleaning2 button
+cleaning2 = tk.CTkButton(master=left_panel, text="Cleaning 2", text_color="white", font=("sanserif", 16, "bold"),
+                         border_width=0, bg_color="transparent", fg_color="transparent", hover_color="#6666ff",
+                         height=40, width=300, corner_radius=10)
+cleaning2.place(y=145, x=0)
+
+# fuzzy_logic button
+fuzzy_logic = tk.CTkButton(master=left_panel, text="Fuzzy logic", text_color="white", font=("sanserif", 16, "bold"),
+                           border_width=0, bg_color="transparent", fg_color="transparent", hover_color="#6666ff",
+                           height=40, width=300, corner_radius=10)
+fuzzy_logic.place(y=190, x=0)
+
+# k_medoid button
+k_medoid = tk.CTkButton(master=left_panel, text="K-mediod", text_color="white", font=("sanserif", 16, "bold"),
+                        border_width=0, bg_color="transparent", fg_color="transparent", hover_color="#6666ff",
+                        height=40, width=300, corner_radius=10)
+k_medoid.place(y=235, x=0)
+
+# add content to left panel
+
 
 # main loop
 root.mainloop()
