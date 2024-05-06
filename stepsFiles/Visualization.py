@@ -127,3 +127,4 @@ def get_visualization_panel(root):
     canvas = FigureCanvasTkAgg(fig, master=panel)
     canvas.draw()
     canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH)
+    return panel
