@@ -6,6 +6,12 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 
+def get_visualzation_panel():
+    import visualization as vs
+    right_panel.pack_forget()
+    return vs.get_visualization_panel(root)
+
+
 def get_k_mediod_panel():
     import k_medoid as km
     right_panel.pack_forget()
@@ -222,8 +228,14 @@ fuzzy_logic.place(y=145, x=0)
 # k_medoid button
 k_medoid = tk.CTkButton(master=left_panel, text="K-mediod", text_color="white", font=("sanserif", 16, "bold"),
                         border_width=0, bg_color="transparent", fg_color="transparent", hover_color="#6666ff",
-                        height=40, width=300, corner_radius=10, command=get_k_mediod_panel())
+                        height=40, width=300, corner_radius=10, command=get_k_mediod_panel)
 k_medoid.place(y=190, x=0)
+
+# k_medoid button
+visualization = tk.CTkButton(master=left_panel, text="Visualization", text_color="white", font=("sanserif", 16, "bold"),
+                             border_width=0, bg_color="transparent", fg_color="transparent", hover_color="#6666ff",
+                             height=40, width=300, corner_radius=10, command=get_visualzation_panel)
+visualization.place(y=235, x=0)
 
 # main loop
 root.mainloop()
