@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from sklearn.preprocessing import MinMaxScaler  # To normalize the values before the clustering
 from sklearn.metrics import silhouette_score  # To optimize number of clusters
-from sklearn_extra.cluster import KMedoids  # To perform k-medoids clustering
+from sklearn_extra.cluster import KMedoids  # To perform k-medoid clustering
 
 data = pd.read_csv(r"C:\Users\Ahmed Tarek\OneDrive\Desktop\mining_project\dataSet.csv")
 data.head()
@@ -22,7 +22,7 @@ def get_kmedoid_panel(root):
     data.info()
 
     # ## Goal of the analysis
-    # Perform K-medoids clustering on the data to gain insights on the following:
+    # Perform K-medoid clustering on the data to gain insights on the following:
     # Which combinations of platform & post type usually perform better?
     #
     # Based on 2 metrics:
@@ -78,7 +78,7 @@ def get_kmedoid_panel(root):
 
     normalized_df.head()
 
-    # >Performing k medoids clustering, and comparing silhouette scores to determine the best number of clusters
+    # >Performing k reloads clustering, and comparing silhouette scores to determine the best number of clusters
 
     # Here's a simple explanation of the silhouette score:
     # 1. **Cohesion (How Close the Points Are to Each Other)**: For each data point in a cluster, the silhouette score
@@ -187,19 +187,19 @@ def get_kmedoid_panel(root):
 
     # Next, we do the same thing for post types
 
-    postType_results = data.groupby(['Post Type', 'Cluster']).size().unstack(fill_value=0)
+    post_type_results = data.groupby(['Post Type', 'Cluster']).size().unstack(fill_value=0)
 
-    cluster_results = postType_results.T
+    cluster_results = post_type_results.T
 
     # Plot a pie chart for each cluster
     for cluster in cluster_results.index:
         # Get platform distribution for the current cluster
-        postType_distribution = cluster_results.loc[cluster]
+        post_type_distribution = cluster_results.loc[cluster]
 
         # Create a pie chart
         plt.subplot(1, 5, i+2)
         i += +2
-        plt.pie(postType_distribution, labels=postType_distribution.index, autopct='%1.1f%%')
+        plt.pie(post_type_distribution, labels=post_type_distribution.index, autopct='%1.1f%%')
 
         # Add a title with the cluster name
         plt.title(f'Post Type Distribution for Cluster {cluster}')
@@ -207,4 +207,5 @@ def get_kmedoid_panel(root):
     canvas = FigureCanvasTkAgg(fig, master=panel)
     canvas.draw()
     canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH)
+    return panel
     # ## Videos usually perform better
