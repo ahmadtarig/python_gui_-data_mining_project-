@@ -7,11 +7,12 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import silhouette_score
 from sklearn_extra.cluster import KMedoids
+from path import project_path
 
-data = pd.read_csv(r"C:\Users\Ahmed Tarek\OneDrive\Desktop\mining_project\dataSet.csv")
 
 
 def get_kmedoid_panel(root):
+    data = pd.read_csv(project_path + "\\dataSet.csv")
     panel = tk.CTkScrollableFrame(master=root, fg_color="#a5bcd9", corner_radius=20,
                                   bg_color="transparent", scrollbar_button_color="blue")
     panel.pack(side="left", padx=10, pady=10, fill="both", expand=True)

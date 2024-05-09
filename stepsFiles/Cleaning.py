@@ -1,12 +1,12 @@
 import customtkinter as tk
+from path import project_path
 import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import seaborn as sns
 
-
 def get_cleaning_panel(root, right_panel_color):
-    df = pd.read_csv(r"C:\Users\Ahmed Tarek\OneDrive\Desktop\mining_project\dataSet.csv")
+    df = pd.read_csv(project_path + "\\dataSet.csv")
     # steps panels
     cleaning_pane = tk.CTkScrollableFrame(master=root, fg_color="#a5bcd9", corner_radius=20,
                                           bg_color="transparent", scrollbar_button_color="blue")

@@ -2,11 +2,10 @@
 import pandas as pd
 import customtkinter as tk
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-
-df = pd.read_csv(r"C:\Users\Ahmed Tarek\OneDrive\Desktop\mining_project\dataSet.csv")
-
+from path import project_path
 
 def get_visualization_panel(root):
+    df = pd.read_csv(project_path + "\\dataSet.csv")
     panel = tk.CTkScrollableFrame(master=root, fg_color="#a5bcd9", corner_radius=20,
                                   bg_color="transparent", scrollbar_button_color="blue")
     panel.pack(side="left", padx=10, pady=10, fill="both", expand=True)

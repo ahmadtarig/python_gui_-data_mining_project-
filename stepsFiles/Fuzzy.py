@@ -1,37 +1,37 @@
 import customtkinter as tk
 from PIL import Image, ImageTk
-
+from path import project_path
 
 def get_fuzzy_panel(root):
     panel = tk.CTkScrollableFrame(master=root, fg_color="#a5bcd9", corner_radius=20,
                                   bg_color="transparent", scrollbar_button_color="blue")
     panel.pack(side="left", padx=10, pady=10, fill="both", expand=True)
 
-    image1 = Image.open(r"C:\Users\Ahmed Tarek\OneDrive\Desktop\mining_project\fuzzyVisualization\1.png")
+    image1 = Image.open(project_path + "\\fuzzyVisualization\\1.png")
     photo1 = ImageTk.PhotoImage(image1)
 
-    image2 = Image.open(r"C:\Users\Ahmed Tarek\OneDrive\Desktop\mining_project\fuzzyVisualization\2.png")
+    image2 = Image.open(project_path + "\\fuzzyVisualization\\2.png")
     photo2 = ImageTk.PhotoImage(image2)
 
-    image3 = Image.open(r"C:\Users\Ahmed Tarek\OneDrive\Desktop\mining_project\fuzzyVisualization\3.png")
+    image3 = Image.open(project_path + "\\fuzzyVisualization\\3.png")
     photo3 = ImageTk.PhotoImage(image3)
 
-    image4 = Image.open(r"C:\Users\Ahmed Tarek\OneDrive\Desktop\mining_project\fuzzyVisualization\4.png")
+    image4 = Image.open(project_path + "\\fuzzyVisualization\\4.png")
     photo4 = ImageTk.PhotoImage(image4)
 
-    image_p = Image.open(r"C:\Users\Ahmed Tarek\OneDrive\Desktop\mining_project\fuzzyVisualization\code.png")
+    image_p = Image.open(project_path + "\\fuzzyVisualization\\code.png")
     photo_p = ImageTk.PhotoImage(image_p)
 
-    image5 = Image.open(r"C:\Users\Ahmed Tarek\OneDrive\Desktop\mining_project\fuzzyVisualization\5.png")
+    image5 = Image.open(project_path + "\\fuzzyVisualization\\5.png")
     photo5 = ImageTk.PhotoImage(image5)
 
-    image6 = Image.open(r"C:\Users\Ahmed Tarek\OneDrive\Desktop\mining_project\fuzzyVisualization\6.png")
+    image6 = Image.open(project_path + "\\fuzzyVisualization\\6.png")
     photo6 = ImageTk.PhotoImage(image6)
 
-    image7 = Image.open(r"C:\Users\Ahmed Tarek\OneDrive\Desktop\mining_project\fuzzyVisualization\7.png")
+    image7 = Image.open(project_path + "\\fuzzyVisualization\\7.png")
     photo7 = ImageTk.PhotoImage(image7)
 
-    image8 = Image.open(r"C:\Users\Ahmed Tarek\OneDrive\Desktop\mining_project\fuzzyVisualization\8.png")
+    image8 = Image.open(project_path + "\\fuzzyVisualization\\8.png")
     photo8 = ImageTk.PhotoImage(image8)
 
     # Create a label and display the image

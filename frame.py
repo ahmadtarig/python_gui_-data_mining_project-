@@ -1,4 +1,5 @@
 import customtkinter as tk
+from path import project_path
 from stepsFiles import Cleaning, Fuzzy, K_medoid, Visualization
 from PIL import Image, ImageTk
 
@@ -19,7 +20,7 @@ def predict_fun():
     import warnings
 
     warnings.filterwarnings('ignore')
-    df = pd.read_csv(r"C:\Users\Ahmed Tarek\OneDrive\Desktop\mining_project\dataSet.csv")
+    df = pd.read_csv(project_path  + "\\dataSet.csv")
     # Define linguistic variables for likes
     likes = ctrl.Antecedent(np.arange(0, 1001, 1), 'likes')
     likes['low'] = fuzz.trimf(likes.universe, [0, 0, 500])
@@ -210,7 +211,7 @@ cover = tk.CTkFrame(master=root, fg_color="skyblue", corner_radius=0, width=1000
 cover.pack(padx=0, pady=0, fill=tk.BOTH, expand=True)
 
 
-image = Image.open(r"C:\Users\Ahmed Tarek\OneDrive\Desktop\mining_project\fuzzyVisualization\background.png")
+image = Image.open(project_path + "\\fuzzyVisualization\\background.png")
 photo = ImageTk.PhotoImage(image)
 
 # Create a canvas to place the background image
